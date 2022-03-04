@@ -32,4 +32,11 @@ auto random fire for dog
 space fire for cat
 
 ### phase 5 scoring system and life deduct by rocks
-todo
+rocks deduct life
+rocks gain life from entity level + speed
+add game end and new level when stage cleared
+dog will gain level and throw rocks faster
+enter button will stop the game from running
+
+**4-hours-reached**
+will stop here for now

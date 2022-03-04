@@ -10,6 +10,7 @@ export default class Player extends Rectangle{
         super();
         this.width = this.height = 32;
         this.life = 100;
+        this.level = 1;
         this.center = this.destination = this.latestDestination = new Point(0,0);
         this.shots = [];
     }
@@ -30,7 +31,7 @@ export default class Player extends Rectangle{
         });
     }
     update(time){
-        this.shots = this.shots.filter(s => s.y >= 0 && s.y <= GLOBAL.CANVAS_HEIGHT);
+        this.shots = this.shots.filter(s => s.y >= 0 && s.y <= GLOBAL.CANVAS_HEIGHT && s.life > 0);
         [...this.shots].forEach(obj=>{
             if(obj.update) obj.update(time);
         });
@@ -39,12 +40,30 @@ export default class Player extends Rectangle{
         if(this.shots.length > 3) return;
         let rock = new Rock(this);
     }
+    moveleft(){
+        this.destination.move(DIRECTION.LEFT,32);
+        if(this.destination.x <= 16){
+            this.destination.x = 16;
+        }
+        if(this.destination.x >= GLOBAL.CANVAS_WIDTH - 16){
+            this.destination.x = GLOBAL.CANVAS_WIDTH - 16;
+        }
+    }
+    moveright(){
+        this.destination.move(DIRECTION.RIGHT,32);
+        if(this.destination.x >= GLOBAL.CANVAS_WIDTH - 16){
+            this.destination.x = GLOBAL.CANVAS_WIDTH - 16;
+        }
+        if(this.destination.x >= GLOBAL.CANVAS_WIDTH - 16){
+            this.destination.x = GLOBAL.CANVAS_WIDTH - 16;
+        }
+    }
     randomActions(){
         if(Math.random() > 0.8){
-            this.destination.move(DIRECTION.LEFT,32);
+            this.moveleft();
         }
         if(Math.random() > 0.8){
-            this.destination.move(DIRECTION.RIGHT,32);
+            this.moveright();
         }
         if(Math.random() > 0.8){
             this.fire();
