@@ -21,3 +21,15 @@ loading scene to load all assets
 main menu scene to display menu options
  
 **2-hours-limit-reached**
+
+### phase 4 game entities
+player entity: cat - dog
+game object: rock
+adding game scene
+dummy moves for dog 
+left right move for cat
+auto random fire for dog
+space fire for cat
+
+### phase 5 scoring system and life deduct by rocks
+todo

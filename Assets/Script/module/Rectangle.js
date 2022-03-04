@@ -13,7 +13,7 @@ export default class Rectangle{
         this.container  =   null;
         this.center     =   center  || new Point(0,0);
         this.width      =   width   || 0;
-        this.height     =   height  ||  0;
+        this.height     =   height  || 0;
         this.fill       =   fill    || null;
         this.rotation   =   0;
     }

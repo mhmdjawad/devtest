@@ -13,6 +13,8 @@ class CatvsDogGame extends GameBase{
             this.EventManager,
             [KeyboardAndMouse.Event.CLICK]
             ,false);
+        new KeyboardAndMouse(window,this.EventManager,[KeyboardAndMouse.Event.KEYDOWN],true);
+        
     }
     async start(){
         AssetsManager.loadAssets();

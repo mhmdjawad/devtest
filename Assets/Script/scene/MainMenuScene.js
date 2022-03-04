@@ -25,10 +25,11 @@ export default class MainMenuScene{
         let self = this;
 		this.menuItems = [
 			new MenuItem(this,"HOW TO PLAY"	, menuXY.x, menuXY.y + menuXY.h * menuXY.r++, function(){
-                //todo
+				alert("move to new game with arrow, and press enter :)");
             }),
 			new MenuItem(this,"New Game"		, menuXY.x + GLOBAL.TILESIZE * 2, menuXY.y + menuXY.h * menuXY.r++, function(){
-				//todo
+				// alert("new game");
+				self.sceneManager.toGame();
 			}),
 		];
 		this.menuItemSelected = 0;
